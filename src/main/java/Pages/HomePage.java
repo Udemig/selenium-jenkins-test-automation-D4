@@ -1,12 +1,13 @@
 package Pages;
 
+import Base.BaseLib;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class HomePage {
+public class HomePage extends BaseLib {
 
     private WebDriver driver;
 
@@ -37,6 +38,7 @@ public class HomePage {
         String value =  driver.findElement(By.cssSelector("#rightPanel > p")).getText();
         Assert.assertEquals(text, value);
         Allure.addAttachment(text + ": erorr mesajı geldiği görüntülenmiştir.","");
+        attachScreenshot(driver);
         return this;
     }
 

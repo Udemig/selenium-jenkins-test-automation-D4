@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 
-public class BaseTest {
+public class BaseTest extends BaseLib{
 
     public WebDriver driver;
 
@@ -15,7 +15,7 @@ public class BaseTest {
         String tarayici = System.getProperty("browser");
         String osName = System.getProperty("os.name");
 
-        if (tarayici== null) {tarayici="Firefox";}
+        if (tarayici== null) {tarayici="Chrome";}
 
         System.out.println(tarayici);
         if (tarayici.equals("Chrome")) {
